@@ -43,7 +43,10 @@ class Robot : public frc::TimedRobot {
   double yMovement, xMovement;
 
   int counter;
-  
+
+  double rSet;
+  double lSet;
+
 //motor id's 
 //you can change them
 
@@ -56,6 +59,12 @@ class Robot : public frc::TimedRobot {
 
 //library rev, init function/class CANSparkMax, rightLeadMotor is a variable storing the class CANSparkMax
 
-  rev::CANSparkMax *rightLeadMotor = new rev::CANSparkMax(rightLeadMotorID, rev::CANSparkMax::CANSparkMaxLowLevel::MotorType::kBrushless);
-  rev::CANSparkMax *leftLeadMotor = new rev::CANSparkMax(leftLeadMotorID, rev::CANSparkMax::CANSparkMaxLowLevel::MotorType::kBrushless);
- };
+  rev::CANSparkMax* rightLeadMotor = new rev::CANSparkMax(rightLeadMotorID, rev::CANSparkMax::CANSparkMaxLowLevel::MotorType::kBrushless);
+  rev::CANSparkMax* leftLeadMotor = new rev::CANSparkMax(leftLeadMotorID, rev::CANSparkMax::CANSparkMaxLowLevel::MotorType::kBrushless);
+
+  rev::SparkMaxPIDController lPID = leftLeadMotor->GetPIDController();
+  rev::SparkMaxPIDController rPID = rightLeadMotor->GetPIDController();
+
+//Change from 7/2 #1
+
+};
